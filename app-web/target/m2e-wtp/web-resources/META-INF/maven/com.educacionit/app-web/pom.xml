@@ -11,6 +11,12 @@
   <packaging>war</packaging>
   
   <dependencies>
+	  		<dependency>
+			    <groupId>com.educacionit</groupId>
+			    <artifactId>app-services</artifactId>
+			    <version>0.0.1-SNAPSHOT</version>
+			</dependency>
+	  
 	  <!-- librerías para construir y trabajar con jsp y servlet -->
 	  <!-- buscar jsp api  JavaServer pages (TM) API -->
 	  <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->

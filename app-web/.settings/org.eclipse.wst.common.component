@@ -11,6 +11,9 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
+        <dependent-module archiveName="app-services-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/app-services/app-services">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
                 
         <property name="context-root" value="app-web"/>
                 

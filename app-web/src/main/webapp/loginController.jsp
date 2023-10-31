@@ -1,3 +1,7 @@
+<%@page import="com.educacionit.domain.Usuario" %>
+<%@page import="com.educacionit.services.impl.LoginServiceImpl" %>
+<%@page import="com.educacionit.services.LoginService" %>
+
 <html>
 	<head>
 		<jsp:include page="styles.jsp"></jsp:include>
@@ -14,7 +18,10 @@
 				String username = request.getParameter("username");
 				String password = request.getParameter("password");
 				
-				if ( username.equals("eduit") && password.equals("eduit")) {
+				LoginService ls = new LoginServiceImpl();
+				Usuario usuario = ls.getUserByUserName(username);
+				
+				if ( usuario !=null && usuario.getPassword().equals(password)) {
 					
 			%>
 				<div class="alert alert-success" role="alert">
