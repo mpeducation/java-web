@@ -13,7 +13,7 @@ public class AdministradorDeConexiones {
 		String url = "jdbc:mysql://localhost:32768/java";
 		
 		String user = "root";
-		String password = "123456";
+		String password = "password";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

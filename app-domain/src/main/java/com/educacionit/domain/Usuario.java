@@ -2,7 +2,6 @@ package com.educacionit.domain;
 
 public class Usuario {
 
-	private Long id;
 	private String username;
 	private String password;
 	
@@ -44,6 +43,10 @@ public class Usuario {
 		this.password = password;
 	}
 	
-	
+	private Long id;
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + "]";
+	}
 	
 }
