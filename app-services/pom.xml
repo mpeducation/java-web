@@ -6,4 +6,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>app-services</artifactId>
+  
+   <dependencies>
+	  <dependency>
+	  	<groupId>com.educacionit</groupId>
+	  	<artifactId>app-dao</artifactId>
+	  	<version>0.0.1-SNAPSHOT</version>
+	  </dependency>
+  </dependencies>
 </project>
