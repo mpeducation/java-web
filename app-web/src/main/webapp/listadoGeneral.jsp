@@ -1,3 +1,6 @@
+<%@page import="com.educacionit.services.impl.ProductoServiceImpl"%>
+<%@page import="com.educacionit.domain.Producto"%>
+<%@page import="java.util.Collection"%>
 <html>
 	<head>
 		<title>Educacion IT - Listado de productos</title>
@@ -15,30 +18,41 @@
 					<table class="table">
 					  <thead>
 					    <tr>
-					      <th scope="col">#</th>
-					      <th scope="col">First</th>
-					      <th scope="col">Last</th>
-					      <th scope="col">Handle</th>
+					      <th scope="col">ID</th>
+					      <th scope="col">CODIGO</th>
+					      <th scope="col">TITULO</th>
+					      <th scope="col">PRECIO</th>
+					      <th scope="col">TIPO</th>
+					      <th scope="col">ACCIONES</th>
 					    </tr>
 					  </thead>
+					  
+					  <%
+					    ProductoServiceImpl p = new ProductoServiceImpl();
+					  
+					  	Collection<Producto> productos = p.findAll();
+					  %>
+					  
 					  <tbody>
+					  
+					  <% for(Producto aux: productos) { %>
+					  
 					    <tr>
-					      <th scope="row">1</th>
-					      <td>Mark</td>
-					      <td>Otto</td>
-					      <td>@mdo</td>
+					      <th scope="row"><%= aux.getId() %></th>
+					      <td><%= aux.getCodigo() %></td>
+					      <td><%= aux.getTitulo() %></td>
+					      <td><%= aux.getPrecio() %></td>
+					      <td><%= aux.getTipoProducto() %></td>
+					      <td>
+					      	<button class="btn btn-danger">Eliminar</button>
+					      	<button class="btn btn-warning">Editar</button>	
+					      </td>
 					    </tr>
-					    <tr>
-					      <th scope="row">2</th>
-					      <td>Jacob</td>
-					      <td>Thornton</td>
-					      <td>@fat</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">3</th>
-					      <td colspan="2">Larry the Bird</td>
-					      <td>@twitter</td>
-					    </tr>
+					    
+					  <%
+						}
+					  %>
+					   
 					  </tbody>
 					</table>
 				</div>
