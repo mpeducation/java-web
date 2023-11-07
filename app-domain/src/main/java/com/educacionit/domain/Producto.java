@@ -71,6 +71,12 @@ public class Producto {
 		this.tipoProducto = tipoProducto;
 	}
 	
+	@Override
+	public String toString() {
+		return "Producto => " + id + " , " + titulo + " , " + precio + " , " + codigo
+				+ " , " + tipoProducto;
+	}
+	
 	
 	
 	
