@@ -15,6 +15,12 @@
   	<description></description>
   	<servlet-class>com.educacionit.web.servlet.NewProductoServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<display-name>LoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.LoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NuevoProductoServlet</servlet-name>
   	<url-pattern>/NuevoProductoServlet</url-pattern>
@@ -22,5 +28,9 @@
   <servlet-mapping>
   	<servlet-name>NewProductoServlet</servlet-name>
   	<url-pattern>/NewProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>  
  </web-app>
