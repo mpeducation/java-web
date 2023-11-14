@@ -174,8 +174,49 @@ public class ProductoDaoImpl implements ProductoDao {
 
 	@Override
 	public Producto update(Producto producto) throws GenericException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Producto productoBuscador = this.getById(producto.getId());
+		
+		Connection connection = AdministradorDeConexiones.obtenerConexion();
+		
+		if ( productoBuscador == null) {
+			throw new GenericException("No existe producto id:" + producto.getId(), null);
+		}
+		
+		String sqlUpdate = "UPDATE productos "
+				+ "SET titulo = ? ,"
+				+ "precio = ? ,"
+				+ "tipo_producto = ? "
+				+ "WHERE id = ?";
+		
+		try {
+			PreparedStatement statement = connection.prepareStatement(sqlUpdate);
+			
+			statement.setString(1, producto.getTitulo());
+			statement.setFloat(2, producto.getPrecio());
+			statement.setLong(3, producto.getTipoProducto());
+			statement.setLong(4, producto.getId());
+			
+			int updated = statement.executeUpdate();
+			
+			if (updated != 1) { // se encontraron registros?
+				throw new Exception("No se ha podido modificar los datos del producto con ID" + producto.getId());
+			}
+			
+			producto = this.getById(producto.getId());
+			
+			return producto;
+			
+		} catch (Exception e) {
+			throw new GenericException("No se ha podido actualizar el producto", e);
+		} finally {
+			try {
+				connection.close();
+			} catch(SQLException e1) {
+				throw new GenericException("Problema al cerrar la conexión", e1);
+			}
+		}
+		
 	}
 
 	@Override

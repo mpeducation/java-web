@@ -2,5 +2,25 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
  <web-app>
-  <display-name>Archetype Created Web Application</display-name>  
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>NuevoProductoServlet</servlet-name>
+  	<display-name>NuevoProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.NuevoProductoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>NewProductoServlet</servlet-name>
+  	<display-name>NewProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.NewProductoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>NuevoProductoServlet</servlet-name>
+  	<url-pattern>/NuevoProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NewProductoServlet</servlet-name>
+  	<url-pattern>/NewProductoServlet</url-pattern>
+  </servlet-mapping>  
  </web-app>

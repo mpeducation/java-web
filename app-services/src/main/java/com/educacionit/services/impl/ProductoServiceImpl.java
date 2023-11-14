@@ -3,6 +3,7 @@ package com.educacionit.services.impl;
 import java.util.Collection;
 
 import com.educacionit.dao.ProductoDao;
+import com.educacionit.dao.exceptions.DuplicatedException;
 import com.educacionit.dao.exceptions.GenericException;
 import com.educacionit.dao.impl.ProductoDaoImpl;
 import com.educacionit.domain.Producto;
@@ -30,38 +31,67 @@ public class ProductoServiceImpl implements ProductoService{
 
 	@Override
 	public Producto getById(Long id) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return this.productoDao.getById(id);
+		} catch (GenericException e) {
+			throw new ServiceException(e.getMessage(), e);
+		}
+		
+		
 	}
 
 	@Override
 	public Producto nuevoProducto(Producto producto) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return this.productoDao.create(producto);
+		} catch (DuplicatedException e) {
+			throw new ServiceException("Producto duplicado:" + e.getMessage(), e);
+		} catch (GenericException e) {
+			throw new ServiceException("Error interno: " + e.getMessage(), e);
+		}
 	}
 
 	@Override
 	public Collection<Producto> buscarProductos(String clave) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return this.productoDao.findAllByTitulo(clave);
+		} catch (GenericException e) {
+			throw new ServiceException(e.getMessage(), e);
+		}
+		
 	}
 
 	@Override
 	public Producto eliminarProducto(Long id) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return this.productoDao.deleteById(id);
+		} catch (GenericException e) {
+			throw new ServiceException(e.getMessage(), e);
+		}
 	}
 
 	@Override
 	public void actualizarProducto(Producto producto) throws ServiceException {
-		// TODO Auto-generated method stub
+		
+		try {
+			this.productoDao.update(producto);
+		} catch (GenericException e) {
+			throw new ServiceException(e.getMessage(), e);
+		}
 		
 	}
 
 	@Override
 	public Producto obtenerPorCodigo(String codigo) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			return this.productoDao.getByCodigo(codigo);
+		} catch (GenericException e) {
+			throw new ServiceException(e.getMessage(), e);
+		}
 	}
 
 	

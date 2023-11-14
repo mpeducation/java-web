@@ -13,7 +13,7 @@
 			<div class="row">
 				<div class="col">
 					
-					<form action="" method="POST" class="border border-primary p-5 mt-3 w-50 m-auto">
+					<form action="<%= request.getContextPath() %>/NewProductoServlet" method="POST" class="border border-primary p-5 mt-3 w-50 m-auto">
 					
 						<div class="mb-3">
 			  				<label for="lbl-codigo" class="form-label">Codigo:</label>
