@@ -33,6 +33,18 @@
   	<description></description>
   	<servlet-class>com.educacionit.web.servlet.BaseServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CargarParaEditarProductoServlet</servlet-name>
+  	<display-name>CargarParaEditarProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.CargarParaEditarProductoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ActualizarProductoServlet</servlet-name>
+  	<display-name>ActualizarProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.ActualizarProductoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NuevoProductoServlet</servlet-name>
   	<url-pattern>/NuevoProductoServlet</url-pattern>
@@ -52,5 +64,13 @@
   <servlet-mapping>
   	<servlet-name>BaseServlet</servlet-name>
   	<url-pattern>/BaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CargarParaEditarProductoServlet</servlet-name>
+  	<url-pattern>/CargarParaEditarProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ActualizarProductoServlet</servlet-name>
+  	<url-pattern>/ActualizarProductoServlet</url-pattern>
   </servlet-mapping>  
  </web-app>

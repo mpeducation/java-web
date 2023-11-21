@@ -48,7 +48,7 @@
 					      <td><%= aux.getTipoProducto() %></td>
 					      <td>
 					      	<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar" onclick="guardarId( <%= aux.getId() %>)">Eliminar</button>
-					      	<button class="btn btn-warning">Editar</button>	
+					      	<a class="btn btn-warning" href="<%= request.getContextPath()%>/CargarParaEditarProductoServlet?id=<%=aux.getId()%>" role="button">Editar</a>	
 					      </td>
 					    </tr>
 					    
