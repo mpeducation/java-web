@@ -49,6 +49,8 @@ public class ActualizarProductoServlet extends BaseServlet {
 		} catch (Exception e) {
 			request.setAttribute(ViewKeyEnums.ERROR_GENERAL.name(), e.getMessage());
 			target = ViewEnums.EDITAR_PRODUCTO;
+			System.out.println("-------------------------------");
+			System.out.println(nuevoProducto);
 			
 			// recargo el producto
 			addAtribute(request, ViewKeyEnums.PRODUCTO_EDITAR, nuevoProducto);

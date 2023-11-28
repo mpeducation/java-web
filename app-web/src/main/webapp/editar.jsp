@@ -3,6 +3,7 @@
 <%@page import="com.educacionit.web.enums.ViewKeyEnums"%>
 <%
 	// asumo que el servlet ya cargo el objeto producto
+	System.out.println(ViewKeyEnums.PRODUCTO_EDITAR.name());
 	Producto aux = (Producto)request.getAttribute(ViewKeyEnums.PRODUCTO_EDITAR.name());
 %>
 <html>
@@ -21,6 +22,8 @@
 					
 					<form action="<%= request.getContextPath() %>/ActualizarProductoServlet" method="POST" class="border border-primary p-5 mt-3 w-50 m-auto">
 					
+						<input type="hidden" value="<%= aux.getId() %>" name="id">
+						
 						<div class="mb-3">
 			  				<label for="lbl-codigo" class="form-label">Codigo:</label>
 				  			<input type="text" value="<%= aux.getCodigo() %>" class="form-control" id="lbl-codigo" name="codigo" placeholder="Ingrese el codigo">
