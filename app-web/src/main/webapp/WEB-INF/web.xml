@@ -45,6 +45,12 @@
   	<description></description>
   	<servlet-class>com.educacionit.web.servlet.ActualizarProductoServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>BuscarProductoServlet</servlet-name>
+  	<display-name>BuscarProductoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.educacionit.web.servlet.BuscarProductoServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>NuevoProductoServlet</servlet-name>
   	<url-pattern>/NuevoProductoServlet</url-pattern>
@@ -72,5 +78,9 @@
   <servlet-mapping>
   	<servlet-name>ActualizarProductoServlet</servlet-name>
   	<url-pattern>/ActualizarProductoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BuscarProductoServlet</servlet-name>
+  	<url-pattern>/BuscarProductoServlet</url-pattern>
   </servlet-mapping>  
  </web-app>

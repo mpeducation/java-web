@@ -5,7 +5,9 @@ public enum ViewKeyEnums {
 	ERROR_GENERAL("error"),
 	EXITO("exito"),
 	LISTADO("listado"), 
-	PRODUCTO_EDITAR("producto_editar");
+	PRODUCTO_EDITAR("producto_editar"), 
+	CLAVE_BUSQUEDA("claveBusqueda"), 
+	TOTAL("total");
 	
 	private String viewKey;
 
